@@ -13,7 +13,7 @@ class CreatePulledApartTable extends Migration
      */
     public function up()
     {
-        Schema::create('pulledApart', function (Blueprint $table) {
+        Schema::create('pulled_apart', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha_apartado');
             $table->date('fecha_limite');
@@ -32,6 +32,6 @@ class CreatePulledApartTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pulledApart');
+        Schema::dropIfExists('pulled_apart');
     }
 }

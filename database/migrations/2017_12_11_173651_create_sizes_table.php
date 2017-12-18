@@ -16,9 +16,6 @@ class CreateSizesTable extends Migration
         Schema::create('sizes', function (Blueprint $table) {
             $table->increments('id');
             $table->float('talla');
-            $table->integer('existencia');
-            $table->unsignedInteger('id_zapato');
-            $table->foreign('id_zapato')->references('id')->on('shoes');
             $table->timestamps();
         });
     }

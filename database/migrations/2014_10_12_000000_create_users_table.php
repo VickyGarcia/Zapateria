@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
             $table->string('direccion');
             $table->date('fec_nac');
             $table->boolean('genero');
-            $table->string('foto');
-            $table->string('rfc');
+            $table->string('foto')->nullable();
+            $table->string('rfc')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

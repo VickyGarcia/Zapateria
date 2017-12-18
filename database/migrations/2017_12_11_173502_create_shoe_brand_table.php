@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShoeSaleTable extends Migration
+class CreateShoeBrandTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateShoeSaleTable extends Migration
      */
     public function up()
     {
-        Schema::create('shoeSale', function (Blueprint $table) {
+        Schema::create('shoe_brand', function (Blueprint $table) {
             $table->increments('id');
-            $table->float('precio_venta');
-            $table->integer('cantidad');
+            $table->string('nombre');
+            $table->integer('existencia');
             $table->unsignedInteger('id_zapato');
             $table->foreign('id_zapato')->references('id')->on('shoes');
-            $table->unsignedInteger('id_venta');
-            $table->foreign('id_venta')->references('id')->on('sales');
+            $table->unsignedInteger('id_marca');
+            $table->foreign('id_marca')->references('id')->on('brands');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateShoeSaleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shoeSale');
+        Schema::dropIfExists('shoe_brand');
     }
 }

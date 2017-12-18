@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,4 +25,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class,'id_usuario');
+    }
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class,'id_usuario');
+    }
+
+    public function phones()
+    {
+        return $this->hasMany(Phone::class,'id_usuario');
+    }
+
 }

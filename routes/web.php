@@ -15,14 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/usuarios', 'UserController@index');
 
-Route::get('/usuarios/{id}', 'UserController@show')
-    ->where('id', '[0-9]+');
+Route::get('/promociones','PromotionsController@index');
+Route::get('/promociones/{promotions}','PromotionsController@show');
 
-Route::get('/usuarios/nuevo', 'UserController@create');
 
-Route::get('/saludo/{name}/{nickname?}','WelcomeUserController');
-
-Route::get('/usuarios/{id}/edit', 'UserController@edit')
-    ->where('id', '[0-9]+');
