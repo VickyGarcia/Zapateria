@@ -46,8 +46,8 @@ class Shoe extends Model
         return $this->hasMany(ShoePulled::class,'id_zapato');
     }
 
-    public function ()
+    public function shoesales()
     {
-        return $this->hasMany(::class,'id_zapato');
+        return $this->hasMany(ShoeSale::class,'id_zapato');
     }
 }

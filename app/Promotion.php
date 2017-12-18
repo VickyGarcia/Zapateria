@@ -8,7 +8,7 @@ class Promotion extends Model
 {
     protected $table = 'promotions';
     protected  $fillable = ['nombre','fec_inicio','fec_vencimiento','desc','id_empleado'];
-    protected  $guarded = ['id'];
+
 
     public function employee()
     {

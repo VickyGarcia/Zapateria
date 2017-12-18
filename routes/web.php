@@ -17,6 +17,6 @@ Route::get('/', function () {
 
 
 Route::get('/promociones','PromotionsController@index');
-Route::get('/promociones/{promotions}','PromotionsController@show');
-
-
+Route::get('/promociones/{promotions}','PromotionsController@show')->where('promotions','[0-9]+');
+Route::get('/promociones/create','PromotionsController@create');
+Route::post('/promociones','PromotionsController@store');
